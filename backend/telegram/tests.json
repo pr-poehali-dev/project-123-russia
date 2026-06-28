@@ -1,0 +1,27 @@
+{
+  "tests": [
+    {
+      "name": "Get rules list",
+      "method": "GET",
+      "path": "/?action=rules",
+      "expectedStatus": 200,
+      "expectedBody": {"ok": true},
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Webhook ping",
+      "method": "POST",
+      "path": "/",
+      "body": {"update_id": 1},
+      "expectedStatus": 200,
+      "expectedBody": {"ok": true},
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "CORS preflight",
+      "method": "OPTIONS",
+      "path": "/",
+      "expectedStatus": 200
+    }
+  ]
+}
